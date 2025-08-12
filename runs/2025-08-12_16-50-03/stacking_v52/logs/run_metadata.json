@@ -1,0 +1,171 @@
+{
+  "pipeline": "enhanced_stacking_v5.2",
+  "training_mode": "FAST",
+  "target_auc": 0.97,
+  "final_model": "meta_lightgbm",
+  "final_auc": 0.9689257206295705,
+  "target_achieved": false,
+  "base_models": {
+    "neural_network": {
+      "oof_auc": 0.9595937382870251,
+      "mean_cv_auc": 0.9596310865009972,
+      "std_cv_auc": 0.00031500618036190515,
+      "fold_aucs": [
+        0.9598264667248242,
+        0.9590755061005795,
+        0.959580051754468,
+        0.9600129705628959,
+        0.959660437362218
+      ],
+      "params": {
+        "hidden_layers": [
+          256,
+          128
+        ],
+        "dropout": 0.2,
+        "emb_dropout": 0.1,
+        "input_dropout": 0.1,
+        "batch_size": 4096,
+        "epochs": 5,
+        "patience": 3,
+        "base_lr": 0.001,
+        "weight_decay": 1e-05,
+        "use_mps": true,
+        "n_seeds": 2
+      }
+    },
+    "catboost": {
+      "oof_auc": 0.9653948276050373,
+      "mean_cv_auc": 0.9654005049399993,
+      "std_cv_auc": 0.0004203363745528922,
+      "fold_aucs": [
+        0.9655786173311292,
+        0.9649196990309612,
+        0.9648753852521729,
+        0.9658470225416538,
+        0.9657818005440799
+      ],
+      "params": {
+        "iterations": 500,
+        "learning_rate": 0.1,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "random_seed": 2025,
+        "verbose": false,
+        "early_stopping_rounds": 30,
+        "task_type": "CPU",
+        "thread_count": -1
+      }
+    },
+    "xgboost": {
+      "oof_auc": 0.9680007638736501,
+      "mean_cv_auc": 0.9680030450925361,
+      "std_cv_auc": 0.0003553551203674829,
+      "fold_aucs": [
+        0.9681632058993139,
+        0.967821961484319,
+        0.9674608216306704,
+        0.9680392914919224,
+        0.9685299449564554
+      ],
+      "params": {
+        "n_estimators": 500,
+        "learning_rate": 0.1,
+        "max_depth": 6,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "reg_alpha": 0.1,
+        "reg_lambda": 0.1,
+        "random_state": 2025,
+        "n_jobs": -1,
+        "verbosity": 0
+      }
+    },
+    "lightgbm": {
+      "oof_auc": 0.9683554882732544,
+      "mean_cv_auc": 0.9683584771063837,
+      "std_cv_auc": 0.00036614769896288165,
+      "fold_aucs": [
+        0.9687031412843159,
+        0.9678899867019924,
+        0.9679908063112769,
+        0.9684091902895406,
+        0.9687992609447924
+      ],
+      "params": {
+        "objective": "binary",
+        "metric": "auc",
+        "boosting_type": "gbdt",
+        "num_leaves": 31,
+        "learning_rate": 0.1,
+        "n_estimators": 500,
+        "feature_fraction": 0.8,
+        "bagging_fraction": 0.8,
+        "bagging_freq": 5,
+        "min_child_samples": 20,
+        "reg_alpha": 0.1,
+        "reg_lambda": 0.1,
+        "random_state": 2025,
+        "verbosity": -1,
+        "n_jobs": -1
+      }
+    }
+  },
+  "meta_models": {
+    "logistic_regression": {
+      "oof_auc": 0.9686939310067118
+    },
+    "lightgbm_meta": {
+      "oof_auc": 0.9689257206295705,
+      "params": {
+        "objective": "binary",
+        "metric": "auc",
+        "boosting_type": "gbdt",
+        "num_leaves": 7,
+        "learning_rate": 0.1,
+        "n_estimators": 100,
+        "feature_fraction": 0.8,
+        "bagging_fraction": 0.8,
+        "bagging_freq": 5,
+        "min_child_samples": 20,
+        "reg_alpha": 0.1,
+        "reg_lambda": 0.1,
+        "random_state": 2025,
+        "verbosity": -1,
+        "n_jobs": 1
+      }
+    },
+    "weighted_blend": {
+      "oof_auc": 0.9686863407960289,
+      "weights": [
+        1.084571212954643e-10,
+        6.517702916792687e-11,
+        0.26954260219023307,
+        0.7304573976361327
+      ]
+    },
+    "rank_blend": {
+      "oof_auc": 0.9669884717625783
+    }
+  },
+  "data_info": {
+    "n_splits": 5,
+    "random_seed": 2025,
+    "high_card_threshold": 50,
+    "total_features": 79,
+    "numerical_features": 70,
+    "categorical_features": 9,
+    "target_rate": 0.12065066397190094
+  },
+  "runtime": {
+    "total_time_seconds": 780.6505010128021,
+    "total_time_minutes": 13.010841683546703,
+    "training_mode": "FAST"
+  },
+  "warm_start": {
+    "used": true,
+    "checkpoint_path": "runs/2025-08-12_10-17-24/folds/fold_0/model.pth"
+  },
+  "performance_analysis": "\u274c Below target by 0.001074. See suggestions above.",
+  "timestamp": "2025-08-12_16-50-03"
+}

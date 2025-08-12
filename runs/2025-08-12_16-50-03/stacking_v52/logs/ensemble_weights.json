@@ -1,0 +1,21 @@
+{
+  "optimal_weights": [
+    1.084571212954643e-10,
+    6.517702916792687e-11,
+    0.26954260219023307,
+    0.7304573976361327
+  ],
+  "weight_labels": [
+    "neural_network",
+    "catboost",
+    "xgboost",
+    "lightgbm"
+  ],
+  "final_model": "meta_lightgbm",
+  "meta_model_performance": {
+    "logistic": 0.9686939310067118,
+    "lightgbm": 0.9689257206295705,
+    "weighted": 0.9686863407960289,
+    "rank": 0.9669884717625783
+  }
+}
