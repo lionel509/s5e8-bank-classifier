@@ -1,0 +1,97 @@
+{
+  "pipeline": "stacking_v5",
+  "models": {
+    "neural_network": {
+      "oof_auc": 0.9584449016089411,
+      "mean_cv_auc": 0.9585213520578423,
+      "std_cv_auc": 0.00028626089084227694,
+      "fold_aucs": [
+        0.9583541979937852,
+        0.958090402777226,
+        0.9587721925978263,
+        0.9588858394533791,
+        0.9585041274669945
+      ],
+      "params": {
+        "hidden_layers": [
+          512,
+          256,
+          128
+        ],
+        "dropout": 0.2,
+        "emb_dropout": 0.1,
+        "input_dropout": 0.1,
+        "batch_size": 4096,
+        "epochs": 7,
+        "patience": 5,
+        "base_lr": 0.001,
+        "weight_decay": 1e-05,
+        "use_mps": true
+      }
+    },
+    "catboost": {
+      "oof_auc": 0.9659239721448922,
+      "mean_cv_auc": 0.9659276986314905,
+      "std_cv_auc": 0.00048139546139716616,
+      "fold_aucs": [
+        0.9661849108123162,
+        0.9653175677645851,
+        0.9653731230692526,
+        0.9663595002440714,
+        0.9664033912672273
+      ],
+      "params": {
+        "iterations": 750,
+        "learning_rate": 0.1,
+        "depth": 6,
+        "l2_leaf_reg": 3,
+        "random_seed": 2025,
+        "verbose": false,
+        "early_stopping_rounds": 50,
+        "task_type": "CPU",
+        "thread_count": -1,
+        "bootstrap_type": "Bernoulli",
+        "subsample": 0.8
+      }
+    },
+    "meta_model": {
+      "oof_auc": 0.9659502347383482,
+      "params": {
+        "objective": "binary",
+        "metric": "auc",
+        "boosting_type": "gbdt",
+        "num_leaves": 8,
+        "learning_rate": 0.05,
+        "n_estimators": 300,
+        "feature_fraction": 0.8,
+        "bagging_fraction": 0.8,
+        "bagging_freq": 5,
+        "min_child_samples": 20,
+        "reg_alpha": 0.1,
+        "reg_lambda": 0.1,
+        "random_state": 2025,
+        "verbosity": -1,
+        "n_jobs": 1,
+        "force_col_wise": true,
+        "deterministic": true
+      }
+    }
+  },
+  "data_info": {
+    "n_splits": 5,
+    "random_seed": 2025,
+    "total_features": 16,
+    "numerical_features": 7,
+    "categorical_features": 9,
+    "target_rate": 0.12065066397190094
+  },
+  "runtime": {
+    "total_time_seconds": 691.2725827693939,
+    "total_time_minutes": 11.521209712823232
+  },
+  "warm_start": {
+    "used": true,
+    "checkpoint_path": "runs/2025-08-12_10-17-24/folds/fold_0/model.pth"
+  },
+  "timestamp": "2025-08-12_14-41-51"
+}
