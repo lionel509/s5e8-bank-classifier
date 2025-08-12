@@ -1,0 +1,33 @@
+{
+  "COMPETITION_NAME": "playground-series-s5e8",
+  "ID_COL": "id",
+  "TARGET_COL": "y",
+  "TRAIN_PATH": "playground-series-s5e8/train.csv",
+  "TEST_PATH": "playground-series-s5e8/test.csv",
+  "N_SPLITS": 5,
+  "RANDOM_SEED": 2025,
+  "BATCH_SIZE": 4096,
+  "EPOCHS": 100,
+  "PATIENCE": 12,
+  "BASE_LR": 0.001,
+  "WEIGHT_DECAY": 1e-05,
+  "HIDDEN_LAYERS": [
+    1024,
+    512,
+    256,
+    128
+  ],
+  "DROPOUT": 0.2,
+  "USE_CLASS_WEIGHTS": true,
+  "RUN_STAMP": "2025-08-12_10-17-24",
+  "EMB_DROPOUT": 0.05,
+  "INPUT_DROPOUT": 0.05,
+  "COSINE_T0": 10,
+  "COSINE_T_MULT": 2,
+  "MIN_LR": 1e-06,
+  "USE_SWA": true,
+  "SWA_START_EPOCH": 20,
+  "SWA_LR": 0.0001,
+  "LIVE_PRINT": true,
+  "LIVE_WRITE_EVERY": 1
+}
