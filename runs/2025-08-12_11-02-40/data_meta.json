@@ -1,0 +1,51 @@
+{
+  "cat_cols": [
+    "contact",
+    "default",
+    "education",
+    "housing",
+    "job",
+    "loan",
+    "marital",
+    "month",
+    "poutcome"
+  ],
+  "num_cols": [
+    "age",
+    "balance",
+    "campaign",
+    "day",
+    "duration",
+    "pdays",
+    "previous"
+  ],
+  "cat_cardinalities": [
+    3,
+    2,
+    4,
+    2,
+    12,
+    2,
+    3,
+    12,
+    4
+  ],
+  "feature_cols": [
+    "age",
+    "job",
+    "marital",
+    "education",
+    "default",
+    "balance",
+    "housing",
+    "loan",
+    "contact",
+    "day",
+    "month",
+    "duration",
+    "campaign",
+    "pdays",
+    "previous",
+    "poutcome"
+  ]
+}

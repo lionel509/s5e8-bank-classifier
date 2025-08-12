@@ -1,0 +1,12 @@
+{
+  "d_model": 192,
+  "nhead": 8,
+  "nlayers": 4,
+  "drop": 0.2,
+  "emb_drop": 0.05,
+  "in_drop": 0.05,
+  "head_layers": [
+    512,
+    256
+  ]
+}
