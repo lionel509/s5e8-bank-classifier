@@ -1,0 +1,17 @@
+feature,importance
+contact,0.17768167
+duration,0.16321416
+housing,0.15097652
+poutcome,0.13586138
+month,0.06439653
+loan,0.061359566
+pdays,0.048837762
+balance,0.02756241
+previous,0.024231687
+campaign,0.023894772
+marital,0.02335564
+day,0.02252999
+education,0.021525761
+age,0.021310112
+job,0.018051581
+default,0.015210435
