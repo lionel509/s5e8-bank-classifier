@@ -1,13 +1,3 @@
-#!/usr/bin/env python3
-"""
-Tabular v6 - Tri-Model Blending with Advanced Features
-- Backbone from tabular_tri_model_v4.py
-- Utilities (logging, plotting, run folders) from tabular_stacking_v5.py
-- Hard-coded settings, no CLI or external configs.
-- Models: LightGBM, XGBoost, CatBoost
-- Ensembling: Non-negative weighted blend (grid search) + optional LR meta-model
-"""
-
 import os
 import gc
 import time
